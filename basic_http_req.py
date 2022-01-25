@@ -1,15 +1,15 @@
 import http.client
 
-HOST = "test38148.ru" 
-URI = "/test.php" 
-CTYPE = "olo/lololo" 
-METHOD = "GET" 
-UA = "ololo JDatabaseDriverMysqlip" 
+host = "test38148.ru" 
+uri = "/test.php" 
+content_type = "text/html" 
+method = "GET" 
+UA = "test script" 
 
-h = http.client.HTTPConnection(HOST)
-headers = {"Content-Type": CTYPE,
+c = http.client.HTTPConnection(host)
+headers = {"Content-Type": content_type,
            "Accept": "text/plain",
            "User-Agent": UA}
-h.request(METHOD, URI, {}, headers)
-r = h.getresponse()
+c.request(method, uri, {}, headers)
+r = c.getresponse()
 print(r.read())
